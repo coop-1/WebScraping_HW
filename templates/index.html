@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <div class="page-header">
+      <h1>CURRENT MARS DATA</h1>
+    </div>
+    <button class="btn default" style = "border: 2px solid black" href = '/scrapeData'>Scrape New Data</button>
+    <div class="row" id="mars-news">
+      <div class="column">
+        <div class="row">
+            <h2>Latest Mars News</h2>
+            <h4>{{article_soup.title}}</h4>
+            <p>{{article_soup.content}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="mars-image">
+      <div class="column">
+        <div class="row">
+          <h2>Featured Mars Image</h2>
+          <img src="{{mars_image}}" width = "20%" height = "20%" class="img-responsive" alt="Responsive image" >
+        </div>
+      </div>
+    </div>
+    <div class="row" id="mars-facts">
+      <div class="column">
+        <div class="row">
+            <h2>Mars Weather</h2>
+            <p>{{weather_soup}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="mars-facts">
+      <div class="column">
+        <div class="row">
+            <h2>Mars Facts</h2>
+            {{mars_facts | safe}}
+        </div>
+      </div>
+    </div>
+    <div class="row" id="mars-hemispheres">
+      <div class="column">
+        <div class="row" id="container">
+            <h2>Latest Mars Hemisphere Images</h2>
+            <div class="column" id='image'>
+              <img src="{{hemi1}}" width = "20%" style="float:left" height = "20%" hspace="10" class="img-responsive" >
+            </div>
+            <div class="column" id='image'>
+              <img src="{{hemi2}}" width = "20%" style="float:left" height = "20%" hspace="10" class="img-responsive">
+            </div>
+            <div class="column" id='image'>
+              <img src="{{hemi3}}" width = "20%" style="float:left" height = "20%" hspace="10" class="img-responsive">
+            </div>
+            <div class="column" id='image'>
+              <img src="{{hemi4}}" width = "20%" style="float:left" height = "20%" hspace="10" class="img-responsive">
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
